@@ -1,0 +1,13 @@
+[phases.setup]
+nixPkgs = ["nodejs", "npm", "php", "composer"]
+
+[phases.install]
+cmds = [
+  "composer install --no-dev",
+  "npm install --legacy-peer-deps"
+]
+
+[phases.build]
+cmds = [
+  "npm run build"
+]
