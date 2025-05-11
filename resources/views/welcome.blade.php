@@ -8,7 +8,7 @@
     <title>Laravel</title>
 
     <!-- Use secure URL or relative path -->
-    <link rel="stylesheet" href="{{ secure_asset('build/assets/app-BOEO34xn.css') }}">
+    <link rel="stylesheet" href="{{ secure_asset('build/assets/*.css') }}">
 </head>
 
 <body
@@ -45,9 +45,9 @@
     @if (Route::has('login'))
         <div class="h-14.5 hidden lg:block"></div>
     @endif
-    
+
     <!-- Use secure URL or relative path -->
-    <script src="{{ secure_asset('build/assets/app-T1DpEqax.js') }}" defer></script>
+    <script src="{{ secure_asset('build/assets/*.js') }}" defer></script>
 </body>
 
 </html>
