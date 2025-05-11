@@ -26,13 +26,23 @@ RUN curl -fsSL https://deb.nodesource.com/setup_18.x | bash - && \
 # Set working directory
 WORKDIR /app
 
-# Copy application files
-COPY . .
+# Copy package files first for better caching
+COPY package*.json ./
+COPY composer.json composer.lock ./
 
 # Install dependencies
 RUN composer install --no-dev --optimize-autoloader
 RUN npm install --legacy-peer-deps
+
+# Copy the rest of the application
+COPY . .
+
+# Build assets
 RUN npm run build
+
+# Verify the manifest file exists
+RUN ls -la public/build || echo "Build directory not created"
+RUN ls -la public/build/manifest.json || echo "Manifest not created"
 
 # Set permissions
 RUN chmod -R 777 storage bootstrap/cache
