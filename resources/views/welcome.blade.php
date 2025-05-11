@@ -7,8 +7,7 @@
 
     <title>Laravel</title>
 
-    <!-- Use secure URL or relative path -->
-    <link rel="stylesheet" href="{{ secure_asset('build/assets/*.css') }}">
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
 <body
@@ -45,9 +44,6 @@
     @if (Route::has('login'))
         <div class="h-14.5 hidden lg:block"></div>
     @endif
-
-    <!-- Use secure URL or relative path -->
-    <script src="{{ secure_asset('build/assets/*.js') }}" defer></script>
 </body>
 
 </html>
