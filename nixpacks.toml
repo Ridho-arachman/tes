@@ -1,10 +1,10 @@
 [phases.setup]
 nixPkgs = ["nodejs-18_x", "npm", "php81", "php81Packages.composer"]
-aptPkgs = ["git", "curl", "zip", "unzip"]
+aptPkgs = ["git", "curl", "zip", "unzip", "nodejs", "npm", "php", "php-cli", "php-fpm", "php-mysql", "php-zip", "php-gd", "php-mbstring", "php-curl", "php-xml", "php-bcmath", "composer"]
 
 [phases.install]
 cmds = [
-  "composer install --no-dev",
+  "composer install --no-dev --optimize-autoloader",
   "npm install --legacy-peer-deps"
 ]
 
