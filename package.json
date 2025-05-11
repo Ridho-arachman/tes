@@ -3,8 +3,7 @@
     "type": "module",
     "scripts": {
         "build": "vite build",
-        "dev": "vite --host",
-        "postinstall": "npm run build"
+        "dev": "vite --host"
     },
     "devDependencies": {
         "@tailwindcss/postcss": "^4.1.6",
