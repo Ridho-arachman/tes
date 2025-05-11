@@ -1,7 +1,6 @@
 {
     "build": {
-        "builder": "nixpacks",
-        "buildCommand": "composer install --no-dev && npm install --legacy-peer-deps && npm run build"
+        "builder": "nixpacks"
     },
     "deploy": {
         "startCommand": "php artisan migrate --force && php artisan serve --host=0.0.0.0 --port=$PORT",
